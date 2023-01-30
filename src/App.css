@@ -1,0 +1,35 @@
+main {
+  min-height: 90vh;
+}
+
+.nav {
+  justify-content: space-between !important;
+}
+.link {
+  color: #FAF4B7
+}
+.page {
+  padding-top: 3em;
+  padding-bottom: 3em;
+}
+.page-holder {
+  min-height: 100vh;
+}
+
+body {
+/*   background: #FFF8EA;
+ */  /* background: -webkit-linear-gradient(to right, #FFF8EA, #183244);
+  background: linear-gradient(to right, #FFF8EA, #183244); */
+  background-image: url('bg.jpg');
+  min-height: 100vh;
+}
+
+
+.bg-cover {
+  background-size: cover !important;
+}
+#app-footer {
+  text-align: center;
+  background-color: #f8f9fa;
+  padding: 5px 0;
+}
