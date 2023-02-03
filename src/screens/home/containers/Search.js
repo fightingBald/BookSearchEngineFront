@@ -28,7 +28,7 @@ const Search = ({ getBooks, query }) => {
             type="text" onChange={onInputChange} placeholder="Sargon, /(reg)ex/, full text" 
           />
           <Form.Check aria-label="option 1" onClick={()=>setRegex(!regex)} className="ml-4 mb-3 danger"/>
-          <Form.Label style={{color:'#FAEAB1'}}>Check for RegEx search</Form.Label>
+          <Form.Label style={{color:'#CDE990'}}>Check for RegEx search</Form.Label>
         </InputGroup>
     </div>
   )
