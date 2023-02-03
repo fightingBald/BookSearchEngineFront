@@ -10,6 +10,6 @@ export default (
   <Switch>
     <Route exact path="/" component={Home}/>
     <Route path="/book/:ID" component={Book}/>
-    <Route path="/recommendation/:" component={Recommendations}/>
+    <Route path="/recommendation/:title" component={Recommendations}/>
   </Switch>
 );
