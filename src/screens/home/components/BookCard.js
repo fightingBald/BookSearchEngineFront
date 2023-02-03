@@ -3,12 +3,6 @@ import { Link } from "react-router-dom";
 import Card from "react-bootstrap/Card";
 import { Button } from "react-bootstrap";
 const BookCard = ({ book, action }) => {
-	/*   let {
-    title,
-    subtitle,
-    imageLinks,
-    description
-  } = book.volumeInfo; */
 
 	let { title, author, bookshelf, text } = book;
 	return (
@@ -47,8 +41,6 @@ const BookCard = ({ book, action }) => {
 						variant="outline-secondary"
 						as={Link}
 						to={`/recommendations/${title}`}
-						onClick={action}
-
 					>
 						Get Recommendations
 					</Button>
