@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import isEmpty from "lodash/isEmpty";
 import Spinner from "react-bootstrap/Spinner";
-import BookCard from "../components/BookCard";
+import BookCard from "../home/components/BookCard";
 import axios from "axios";
 import "../book/book.css";
 
