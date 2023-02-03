@@ -32,11 +32,11 @@ const BookCard = ({ book, action }) => {
 					</Card.Text>
 					<Button
 						size="sm"
-						variant="outline-secondary"
+						variant="danger"
 						as={Link}
 						to={`/recommendations/${title}`}
 					>
-						Get Recommendations
+						Recommendations
 					</Button>
 				</Card.Body>
 			</Card>

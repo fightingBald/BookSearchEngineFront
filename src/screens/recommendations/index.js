@@ -8,20 +8,7 @@ import "../book/book.css";
 const Recommendations = ({ match: { params } }) => {
 	const [bookInfos, setBookInfos] = useState({});
 	const [isFetching, setIsFetching] = useState(true);
-	/*   useEffect(() => {
-    setIsFetching(true)
-    axios.get(`https://www.googleapis.com/books/v1/volumes/${params.title}`)
-    .then(response => {
-      setBookInfos(response.data);
-    })
-    .catch(() => {
-      setBookInfos({});
-    })
-    .finally(() => {
-      setIsFetching(false)
-    }) */
-
-
+	
 	useEffect(() => {
 		setIsFetching(true);
 		axios
