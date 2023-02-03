@@ -16,12 +16,15 @@ export const getBooks = (query) => {
 	return function (dispatch) {
 		dispatch(requestBooks(query));
 		let s = "";
-
 		let isValid = true;
 		try {
-			new RegExp(query);
-		} catch(e) {
-			isValid = false;
+			let regex = new RegExp(query);
+		} catch (error) {
+			if (error instanceof SyntaxError) {
+				isValid=false;
+			} else {
+				throw error;
+			}
 		}
 		if (isValid) {
 			s = "?regex=";
@@ -52,28 +55,3 @@ export const getBooks = (query) => {
 	};
 };
 
-export const getRmds = (query) => {
-	return function (dispatch) {
-		dispatch(requestBooks(query));
-		const url = `/api/recommendations/?book_name=${query}`;
-
-		return axios
-			.get(url)
-			.then((response) => {
-				dispatch(
-					receiveBooks({
-						status: "success",
-						payload: response.data,
-					})
-				);
-			})
-			.catch((error) => {
-				dispatch(
-					receiveBooks({
-						status: "error",
-						payload: error,
-					})
-				);
-			});
-		};
-};

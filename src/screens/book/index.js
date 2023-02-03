@@ -23,6 +23,8 @@ const Book = ({ match: { params } }) => {
     }) */
 	useEffect(() => {
 		setIsFetching(true);
+
+
 		let s = "";
 		let regexChecker = new RegExp(/^[0-9a-zA-Z]+$/);
 		if (regexChecker.test(params.ID) === true) {
@@ -31,6 +33,7 @@ const Book = ({ match: { params } }) => {
 			s = "?q=";
 		}
 
+		
 		axios
 			.get(`http://localhost:8000/api/search/${s}${params.ID}`)
 			.then((response) => {

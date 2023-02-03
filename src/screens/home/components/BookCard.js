@@ -8,12 +8,6 @@ const BookCard = ({ book, action }) => {
 	return (
 		<div className="book">
 			<Card>
-				{bookshelf ? (
-					<Card.Img
-						variant="top"
-						src={bookshelf}
-					/>
-				) : null}
 				<Card.Body
 					size="sm"
 					style={{ background: "#FFF8EA" }}
