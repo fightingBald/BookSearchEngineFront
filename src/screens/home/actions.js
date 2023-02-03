@@ -12,25 +12,13 @@ export const receiveBooks = ({ status, payload }) => ({
 	payload,
 });
 
-export const getBooks = (query) => {
+export const getBooks = (query, isRegex) => {
 	return function (dispatch) {
 		dispatch(requestBooks(query));
-		let s = "";
-		let isValid = true;
-		try {
-			let regex = new RegExp(query);
-		} catch (error) {
-			if (error instanceof SyntaxError) {
-				isValid=false;
-			} else {
-				throw error;
-			}
-		}
-		if (isValid) {
+		let s = "?q=";
+		if (isRegex) {
 			s = "?regex=";
-		} else {
-			s = "?q=";
-		}	
+		}
 		axios
 			.get(`http://localhost:8000/api/search/${s}${query}`)
 			.then((response) => {
