@@ -24,7 +24,7 @@ const Search = ({ getBooks, query }) => {
       </div>
         <InputGroup className="mb-3 danger">
           <Form.Control
-            type="text" onChange={onInputChange} placeholder="Harry Potter, Food and Love" 
+            type="text" onChange={onInputChange} placeholder="Sargon, /(reg)ex/, full text" 
           />
         </InputGroup>
     </div>

@@ -4,14 +4,18 @@ import isEmpty from "lodash/isEmpty";
 import Spinner from "react-bootstrap/Spinner";
 import BookCard from "../components/BookCard";
 
+
 const renderBooksList = (data, query) => {
 	if (isEmpty(data)) {
 		console.log("data is empty");
 		return null;
 	}
 	let { results: books, counts } = data;
+
+	
 	return (
 		<>
+
 			<h3>Search results for: {query}</h3>
 			<p>Total results: {counts}</p>
 			<div className="books-list">
@@ -19,6 +23,7 @@ const renderBooksList = (data, query) => {
 					<BookCard
 						/* 						key={book.id} */
 						book={book}
+						// action={() => setModalShow(true)}
 					/>
 				))}
 			</div>

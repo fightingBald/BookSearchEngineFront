@@ -15,10 +15,21 @@ export const receiveBooks = ({ status, payload }) => ({
 export const getBooks = (query) => {
 	return function (dispatch) {
 		dispatch(requestBooks(query));
-		const url = `http://localhost:8000/api/search/?q=${query}`;
+		let s = "";
 
-		return axios
-			.get(url)
+		let isValid = true;
+		try {
+			new RegExp(query);
+		} catch(e) {
+			isValid = false;
+		}
+		if (isValid) {
+			s = "?regex=";
+		} else {
+			s = "?q=";
+		}	
+		axios
+			.get(`http://localhost:8000/api/search/${s}${query}`)
 			.then((response) => {
 				dispatch(
 					receiveBooks({
@@ -27,7 +38,9 @@ export const getBooks = (query) => {
 					})
 				);
 			})
+		
 			.catch((error) => {
+				console.log(error)
 				dispatch(
 					receiveBooks({
 						status: "error",
@@ -35,6 +48,7 @@ export const getBooks = (query) => {
 					})
 				);
 			});
+		
 	};
 };
 
@@ -61,5 +75,5 @@ export const getRmds = (query) => {
 					})
 				);
 			});
-	};
+		};
 };

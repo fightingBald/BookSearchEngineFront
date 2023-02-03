@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Card from "react-bootstrap/Card";
 import { Button } from "react-bootstrap";
-const BookCard = ({ book }) => {
+const BookCard = ({ book, action }) => {
 	/*   let {
     title,
     subtitle,
@@ -46,9 +46,11 @@ const BookCard = ({ book }) => {
 						size="sm"
 						variant="outline-secondary"
 						as={Link}
-						to={`/book/${book.id}`}
+						to={`/recommendations/${title}`}
+						onClick={action}
+
 					>
-						View
+						Get Recommendations
 					</Button>
 				</Card.Body>
 			</Card>
