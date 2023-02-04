@@ -12,7 +12,7 @@ const Recommendations = ({ match: { params } }) => {
 	useEffect(() => {
 		setIsFetching(true);
 		axios
-			.get(`/api/recommendations/?book_name=${params.title}`)
+			.get(`http://localhost:8000/api/recommendations/?book_name=${params.title}`)
 			.then((response) => {
 				setBookInfos(response.data);
 			})
